@@ -1,3 +1,11 @@
+# To-Do-List-App-Part2
+Project 1 Part 2: An Extension of My Persistent Storage To-Do App while Learning React Principles
+
+Main modifications are in `src` > `components`
+
+[Grading Guidelines](https://docs.google.com/document/d/1qDqp_F-cwSh6EWoucuZSsuvLCvmQERJWKVwXiZ0UMJA/edit)
+
+# Miscellaneous
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
