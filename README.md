@@ -5,6 +5,12 @@ Main modifications are in `src` > `components`
 
 [Grading Guidelines](https://docs.google.com/document/d/1qDqp_F-cwSh6EWoucuZSsuvLCvmQERJWKVwXiZ0UMJA/edit)
 
+**Important:**
+- Register a non-existing user
+- Only login with a user who exists on the API
+- Then, click on Use Service (for authenticaton purposes) in order to render the list
+- Log Out when finished or when wanting to access another user's to do items
+
 # Miscellaneous
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
