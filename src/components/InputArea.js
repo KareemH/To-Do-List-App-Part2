@@ -13,6 +13,7 @@ function InputArea(props) {
     setInputText(newValue);
   }
 
+  // What to return in place of the InputArea component in App.js
   return (
     <div className="form">
       {/* 1. In input, we have an onChange that detects when the input updates
@@ -28,12 +29,12 @@ function InputArea(props) {
       -But addItem is a function that resides in the App.jsx/App component
       -We should leave addItem in the top level of the DOM tree and keeping it in the App component
       -We need a way to call the addItem function and pass over inputText to App.jsx
-      -How can we invoke the addItem function within a child component? Use props and go to App.jsx!
+      -How can we invoke the addItem function within a child component? Use props and go to App.jsx to add addItem as property to <InputArea/ > component
       
       -Now that InputArea sends over the onAdd function as a prop, we can access it
         -Make sure the component passes over a props object
-      function InputArea(props) {
-      <button onClick={props.onAdd}>
+      function InputArea(props) {       Ensure props is an objecy
+      <button onClick={props.onAdd}>    Utilize props to access onAdd
 
       So, we have to pass the inputText as an argument to onAdd only when the button is clicked
       -Use anonymous arrow function so that onAdd isn't called instanteously

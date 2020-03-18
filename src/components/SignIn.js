@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 function SignIn(props){
-
-    let ifRegistered = false;
-
+    // Stateful elements
     const [loginText, setLogin] = useState("");
     const [registerText, setRegister] = useState("");
 
+    // When either a register or login input text is updating, we must update its state as well
     function handleChange(event){
+        // Determine if we are handling change of either register or login
         const whichToChange = event.target.name;
+        // Conditional to determine which stateful element should update its state
         if(whichToChange === "registerInfo" ){
             setRegister(event.target.value);
         } else{
@@ -16,29 +17,32 @@ function SignIn(props){
         }
     }
 
+    // When a user clicks on either the register or logn button
     function handleClick(event){
+        // Determine if we are dealing with either register or login
         const whichToChange = event.target.name;
-       
+        // Conditional to determine which props functon to invoke
         if(whichToChange === "registerButton" ){
-            props.onRegister(registerText);
-            ifRegistered = true;
+            props.onRegister(registerText);         // Invoke the onRegister function in App.js
         } else{
-            props.onLogin(loginText);
+            props.onLogin(loginText);               // Invoke the onLogin funciton in App.js
         }
     }
 
+    // What to return in place of the SignIn component in App.js
     return(
     <div>
         <p>Either register a non-existing user or login with existing credentials</p>
+        {/* Register area */}
         <div className="single-sign-in">
             <input 
             name="registerInfo"
             value={registerText}
             onChange={handleChange}/>
             <button name="registerButton" onClick={handleClick}>Register</button>
-            {ifRegistered && <p>You are successfully registered</p> }
         </div>
 
+        {/* Login area */}
         <div className="single-sign-in">
             <input
             name="LoginInfo"
@@ -47,13 +51,6 @@ function SignIn(props){
             <button name="loginButton" onClick={handleClick}>Login</button>
         </div>
 
-    {/* <p>After loggining in, press authenticate to start using the service</p>
-        <div className="single-sign-in">
-            <button>Authenticate</button>
-        </div>
-        <div className="single-sign-in">
-            <button>Authenticate</button>
-        </div> */}
     </div>)
 };
 
